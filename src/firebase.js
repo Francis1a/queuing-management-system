@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB0IwGkI6WMP9HPLNBZNc5d1Uc1YCSaChk",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "tidal-glider-289101.firebaseapp.com",
   projectId: "tidal-glider-289101",
   storageBucket: "tidal-glider-289101.appspot.com",
