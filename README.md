@@ -1,4 +1,4 @@
-# Getting Started with Queuign Management System
+# Getting Started with Queuing Management System
 https://queuing-system.onrender.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
