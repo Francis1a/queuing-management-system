@@ -4,7 +4,7 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import Error404 from "./pages/error404/Error404";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Navigate, Redirect } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
@@ -22,8 +22,8 @@ function App() {
   return (
     <div className={darkMode ? "app dark" : "app"}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/">
+        <Switch>
+          <Route exact path="/">
             <Route path="login" element={<Login />} />
             <Route index element={<RequireAuth><Home /></RequireAuth>} />
             <Route path="users">
@@ -42,9 +42,9 @@ function App() {
                 element={<New inputs={productInputs} title="Add New Product" />}
               />
             </Route>
-            <Route path='*' element={<Error404 />}/>
+            <Redirect to='/404' element={<Error404 />}/>
           </Route>
-        </Routes>
+        </Switch>
       </BrowserRouter>
     </div>
   );
