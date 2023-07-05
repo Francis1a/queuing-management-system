@@ -35,7 +35,7 @@ const Login = () => {
         <form >
           <input type="email" name="Email" id="Email" placeholder="email"  onChange={(e) => setEmail(e.target.value)}/>
           <input type="password" name="Password" id="Password" placeholder="password" onChange={(e) => setPassword(e.target.value)}/>
-          {error && <span>Wring Email or Password!</span>}
+          {error && <span>Wrong Email or Password!</span>}
           <button type="submit">Login</button>
         </form>
       </div>
