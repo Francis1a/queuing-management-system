@@ -29,7 +29,7 @@ const Sidebar = () => {
         indexedDB.deleteDatabase('firebaseLocalStorageDb');
         JSON.parse(localStorage.clear());
         console.log("Signed out successfully");
-        window.location.reload(true);
+        window.location.reload(false);
     }).catch((error) => {
     // An error happened.
     });
