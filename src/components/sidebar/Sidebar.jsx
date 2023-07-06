@@ -28,7 +28,7 @@ const Sidebar = () => {
        } 
       catch {(error) => {
       // An error happened.
-      });}
+      });};
     // .then(() => {
     // // Sign-out successful.
     //     navigate("/login");  
