@@ -25,10 +25,11 @@ const Sidebar = () => {
   const handleLogout = () => {  
     try{signOut(auth);
         navigate("/login");  
-       } 
+       } ;
       catch {(error) => {
       // An error happened.
-      });};
+      });
+            };
     // .then(() => {
     // // Sign-out successful.
     //     navigate("/login");  
