@@ -23,14 +23,8 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {  
-    try{signOut(auth);
-        navigate("/login");  
-       } ;
-      catch {(error) => {
-      // An error happened.
-      });
-            };
-    // .then(() => {
+    signOut(auth);
+    // signOut(auth).then(() => {
     // // Sign-out successful.
     //     navigate("/login");  
     //     indexedDB.deleteDatabase('firebaseLocalStorageDb');
@@ -39,8 +33,8 @@ const Sidebar = () => {
     //     console.log("Signed out successfully");
            
     // }).catch((error) => {
-    // An error happened.
-    });
+    // // An error happened.
+    // });
 }
 
 
