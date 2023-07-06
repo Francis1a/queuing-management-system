@@ -12,7 +12,7 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() =>{
     localStorage.setItem("user", JSON.stringify(state.currentUser));
-    console.log(user);
+    console.log(currentUser);
   },[state.currentUser])
 
   return (
