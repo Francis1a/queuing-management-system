@@ -23,9 +23,10 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {  
-    navigate("/login");             
+           
     signOut(auth).then(() => {
     // Sign-out successful.
+        navigate("/login");  
         indexedDB.deleteDatabase('firebaseLocalStorageDb');
         JSON.parse(localStorage.clear());
         console.log(localStorage.getItem("user"));
