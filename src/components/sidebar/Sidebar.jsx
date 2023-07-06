@@ -23,14 +23,21 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {  
-    signOut(auth).then(() => {
-    // Sign-out successful.
-        indexedDB.deleteDatabase('firebaseLocalStorageDb');
-        JSON.parse(localStorage.clear());
-        console.log(localStorage.getItem("user"));
-        console.log("Signed out successfully");
-        navigate("/login");             
-    }).catch((error) => {
+    try{signOut(auth);
+        navigate("/login");  
+       } 
+      catch {(error) => {
+      // An error happened.
+      });}
+    // .then(() => {
+    // // Sign-out successful.
+    //     navigate("/login");  
+    //     indexedDB.deleteDatabase('firebaseLocalStorageDb');
+    //     JSON.parse(localStorage.clear());
+    //     console.log(localStorage.getItem("user"));
+    //     console.log("Signed out successfully");
+           
+    // }).catch((error) => {
     // An error happened.
     });
 }
