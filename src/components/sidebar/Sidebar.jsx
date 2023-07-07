@@ -28,8 +28,8 @@ const Sidebar = () => {
     signOut(auth).then(() => {
     // Sign-out successful.
         // navigate("/login");  
-        indexedDB.deleteDatabase('firebaseLocalStorageDb');
-        JSON.parse(localStorage.clear());
+        // indexedDB.deleteDatabase('firebaseLocalStorageDb');
+        // JSON.parse(localStorage.clear());
         console.log(localStorage.getItem("user"));
         console.log("Signed out successfully");
            
