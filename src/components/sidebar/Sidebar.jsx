@@ -23,20 +23,20 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const auth = getAuth();
-  const handleLogout = () => {  
+  // const handleLogout = () => {  
 
-    signOut(auth).then(() => {
-    // Sign-out successful.
-        // navigate("/login");  
-        // indexedDB.deleteDatabase('firebaseLocalStorageDb');
-        // JSON.parse(localStorage.clear());
-        console.log(localStorage.getItem("user"));
-        console.log("Signed out successfully");
+  //   signOut(auth).then(() => {
+  //   // Sign-out successful.
+  //       // navigate("/login");  
+  //       // indexedDB.deleteDatabase('firebaseLocalStorageDb');
+  //       // JSON.parse(localStorage.clear());
+  //       console.log(localStorage.getItem("user"));
+  //       console.log("Signed out successfully");
            
-    }).catch((error) => {
-    // An error happened.
-    });
-}
+  //   }).catch((error) => {
+  //   // An error happened.
+  //   });
+  // }
 
 
 
@@ -107,7 +107,7 @@ const Sidebar = () => {
           </li>
           <li>
             <ExitToAppIcon className="icon" />
-            <div onClick={handleLogout}>
+            <div onClick={signOut(auth)}>
               <span>Logout</span>
             </div>
           </li>
