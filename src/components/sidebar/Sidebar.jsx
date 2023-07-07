@@ -14,7 +14,6 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
-import { auth } from "../../firebase";
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
@@ -25,7 +24,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const auth = getAuth();
   const {dispatch} = useContext(AuthContext);
-  
+
   const handleLogout = (e) => {  
     e.preventDefault();
 
