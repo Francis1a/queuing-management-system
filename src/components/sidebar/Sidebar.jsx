@@ -32,7 +32,7 @@ const Sidebar = () => {
     .then((userCredential) => {
     // Sign-out successful.
         indexedDB.deleteDatabase('firebaseLocalStorageDb');
-        JSON.parse(localStorage.clear());
+        // JSON.parse(localStorage.clear());
         console.log(localStorage.getItem("user"));
         console.log("Signed out successfully");
         const user = userCredential.user;
