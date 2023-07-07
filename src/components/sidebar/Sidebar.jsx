@@ -14,27 +14,28 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
-import {  signOut } from "firebase/auth";
-import {auth} from '../../firebase';
+import { getAuth, signOut } from "firebase/auth";
+// import {auth} from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const navigate = useNavigate();
 
+  const auth = getAuth();
   const handleLogout = () => {  
-    signOut(auth);
-    // signOut(auth).then(() => {
-    // // Sign-out successful.
-    //     navigate("/login");  
-    //     indexedDB.deleteDatabase('firebaseLocalStorageDb');
-    //     JSON.parse(localStorage.clear());
-    //     console.log(localStorage.getItem("user"));
-    //     console.log("Signed out successfully");
+
+    signOut(auth).then(() => {
+    // Sign-out successful.
+        navigate("/login");  
+        indexedDB.deleteDatabase('firebaseLocalStorageDb');
+        JSON.parse(localStorage.clear());
+        console.log(localStorage.getItem("user"));
+        console.log("Signed out successfully");
            
-    // }).catch((error) => {
-    // // An error happened.
-    // });
+    }).catch((error) => {
+    // An error happened.
+    });
 }
 
 
