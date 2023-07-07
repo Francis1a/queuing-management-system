@@ -15,28 +15,32 @@ import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 import { getAuth, signOut } from "firebase/auth";
-// import {auth} from '../../firebase';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "../../context/AuthContext";
+
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const navigate = useNavigate();
-
   const auth = getAuth();
-  // const handleLogout = () => {  
 
-  //   signOut(auth).then(() => {
-  //   // Sign-out successful.
-  //       // navigate("/login");  
-  //       // indexedDB.deleteDatabase('firebaseLocalStorageDb');
-  //       // JSON.parse(localStorage.clear());
-  //       console.log(localStorage.getItem("user"));
-  //       console.log("Signed out successfully");
+  const {dispatched} = useContext(AuthContext);
+  const handleLogout = () => {  
+
+    signOut(auth).then(() => {
+    // Sign-out successful.
+        indexedDB.deleteDatabase('firebaseLocalStorageDb');
+        JSON.parse(localStorage.clear());
+        console.log(localStorage.getItem("user"));
+        console.log("Signed out successfully");
+        const user = userCredential.user;
+        dispatched({type:"LOGOUT", payload:user})
+        navigate("/login");  
            
-  //   }).catch((error) => {
-  //   // An error happened.
-  //   });
-  // }
+    }).catch((error) => {
+    // An error happened.
+    });
+  }
 
 
 
