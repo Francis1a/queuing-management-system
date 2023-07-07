@@ -25,8 +25,8 @@ const Sidebar = () => {
   const auth = getAuth();
   const {dispatch} = useContext(AuthContext);
 
-  const handleLogout = (e) => {  
-    e.preventDefault();
+  const handleLogout = () => {  
+
 
     signOut(auth)
     .then(() => {
@@ -37,7 +37,8 @@ const Sidebar = () => {
         console.log(localStorage.getItem("user"));
         console.log("cleared");
         console.log("Signed out successfully");
-        navigate("/login");  
+        window.location.reload(true);
+        // navigate("/login");  
     })
     .catch((error) => {
     // An error happened.
