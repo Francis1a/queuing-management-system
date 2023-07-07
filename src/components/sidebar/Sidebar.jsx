@@ -36,7 +36,7 @@ const Sidebar = () => {
         console.log(localStorage.getItem("user"));
         console.log("Signed out successfully");
         const user = userCredential.user;
-        dispatch({type:"LOGOUT", payload:user});
+        dispatch({type:"LOGOUT"});
         navigate("/login");  
     })
     .catch((error) => {
