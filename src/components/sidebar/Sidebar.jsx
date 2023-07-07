@@ -27,7 +27,7 @@ const Sidebar = () => {
   const {dispatched} = useContext(AuthContext);
   const handleLogout = () => {  
 
-    signOut(auth).then(() => {
+    signOut(auth).then((userCredential) => {
     // Sign-out successful.
         indexedDB.deleteDatabase('firebaseLocalStorageDb');
         JSON.parse(localStorage.clear());
