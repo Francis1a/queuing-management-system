@@ -27,7 +27,8 @@ const Sidebar = () => {
   const {dispatched} = useContext(AuthContext);
   const handleLogout = () => {  
 
-    signOut(auth).then((userCredential) => {
+    signOut(auth)
+    .then((userCredential) => {
     // Sign-out successful.
         indexedDB.deleteDatabase('firebaseLocalStorageDb');
         JSON.parse(localStorage.clear());
@@ -36,8 +37,8 @@ const Sidebar = () => {
         const user = userCredential.user;
         dispatched({type:"LOGOUT", payload:user})
         navigate("/login");  
-           
-    }).catch((error) => {
+    })
+    .catch((error) => {
     // An error happened.
     });
   }
