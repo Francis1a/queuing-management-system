@@ -1,4 +1,13 @@
 import "./sidebar.scss";
+
+import { Link } from "react-router-dom";
+import { DarkModeContext } from "../../context/darkModeContext";
+import { useContext } from "react";
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "../../context/AuthContext";
+
+
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
@@ -11,19 +20,13 @@ import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import { Link } from "react-router-dom";
-import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext } from "react";
-import { getAuth, signOut } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from "../../context/AuthContext";
+
 
 
 const Sidebar = () => {
-  // const { dispatch } = useContext(DarkModeContext);
+  const { dispatch } = useContext(DarkModeContext);
   const navigate = useNavigate();
   const auth = getAuth();
-  const {dispatch} = useContext(AuthContext);
 
   const handleLogout = () => {  
 
