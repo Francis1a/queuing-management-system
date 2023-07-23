@@ -29,8 +29,6 @@ const Sidebar = () => {
   const auth = getAuth();
 
   const handleLogout = () => {  
-
-
     signOut(auth)
     .then(() => {
     // Sign-out successful.
@@ -46,7 +44,7 @@ const Sidebar = () => {
     .catch((error) => {
     // An error happened.
     });
-  }
+  };
 
 
 
@@ -67,6 +65,7 @@ const Sidebar = () => {
             <span>Dashboard</span>
           </li>
           </Link>
+
           <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
@@ -74,6 +73,7 @@ const Sidebar = () => {
               <span>Users</span>
             </li>
           </Link>
+          
           {/* <Link to="/products" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
